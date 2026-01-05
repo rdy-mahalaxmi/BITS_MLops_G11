@@ -2,7 +2,7 @@
 
 A complete MLOps pipeline for heart disease prediction using machine learning, featuring automated CI/CD, containerization, and monitoring.
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 ```
 ├── src/                    # Source code
@@ -66,7 +66,7 @@ curl -X POST \"http://localhost:8000/predict\" \
      }'
 ```
 
-## 🐳 Docker Deployment
+##  Docker Deployment
 
 ### Build and Run
 ```bash
@@ -84,14 +84,14 @@ Access:
 - Prometheus: http://localhost:9090
 - Grafana: http://localhost:3000 (admin/admin)
 
-## ☸️ Kubernetes Deployment
+##  Kubernetes Deployment
 
 ```bash
 kubectl apply -f k8s/deployment.yaml
 kubectl port-forward service/heart-disease-api-service 8000:80
 ```
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 # Run all tests
@@ -101,7 +101,7 @@ pytest tests/ -v
 pytest tests/ -v --cov=src --cov-report=html
 ```
 
-## 📊 MLflow Tracking
+##  MLflow Tracking
 
 View experiments:
 ```bash
@@ -109,7 +109,7 @@ mlflow ui
 ```
 Access at: http://localhost:5000
 
-## 🔍 Monitoring
+##  Monitoring
 
 The API includes:
 - Request/response logging
@@ -117,54 +117,54 @@ The API includes:
 - Health checks
 - Prometheus metrics endpoint
 
-## 📋 Assignment Requirements Coverage
+##  Assignment Requirements Coverage
 
-### ✅ 1. Data Acquisition & EDA (5 marks)
+###  1. Data Acquisition & EDA
 - **Dataset**: Heart disease dataset with download script
 - **Preprocessing**: Missing value handling, feature encoding
 - **EDA**: Professional visualizations (histograms, correlation heatmaps, class balance)
 - **Files**: `src/data_acquisition.py`
 
-### ✅ 2. Feature Engineering & Model Development (8 marks)
+###  2. Feature Engineering & Model Development
 - **Features**: Scaling and encoding pipeline
 - **Models**: Logistic Regression and Random Forest
 - **Tuning**: GridSearchCV with cross-validation
 - **Metrics**: Accuracy, precision, recall, ROC-AUC
 - **Files**: `src/model_training.py`
 
-### ✅ 3. Experiment Tracking (5 marks)
+###  3. Experiment Tracking
 - **MLflow**: Complete experiment tracking
 - **Logging**: Parameters, metrics, artifacts, plots
 - **Comparison**: Multiple model runs tracked
 - **Files**: Integrated in `src/model_training.py`
 
-### ✅ 4. Model Packaging & Reproducibility (7 marks)
+###  4. Model Packaging & Reproducibility
 - **Format**: MLflow and pickle model saving
 - **Dependencies**: Clean `requirements.txt`
 - **Pipeline**: Reusable preprocessing transformers
 - **Files**: `models/`, `requirements.txt`
 
-### ✅ 5. CI/CD Pipeline & Testing (8 marks)
+###  5. CI/CD Pipeline & Testing
 - **Tests**: Comprehensive unit tests with pytest
 - **Pipeline**: GitHub Actions workflow
 - **Steps**: Linting, testing, model training
 - **Artifacts**: Automated logging and storage
 - **Files**: `.github/workflows/mlops-pipeline.yml`, `tests/`
 
-### ✅ 6. Model Containerization (5 marks)
+###  6. Model Containerization
 - **Container**: Docker with FastAPI
 - **Endpoint**: `/predict` with JSON input/output
 - **Features**: Health checks, logging, confidence scores
 - **Files**: `Dockerfile`, `src/api.py`
 
-### ✅ 7. Production Deployment (7 marks)
+###  7. Production Deployment
 - **Platform**: Kubernetes deployment ready
 - **Manifests**: Complete K8s configurations
 - **Exposure**: LoadBalancer and Ingress
 - **Verification**: Health and prediction endpoints
 - **Files**: `k8s/deployment.yaml`
 
-### ✅ 8. Monitoring & Logging (3 marks)
+###  8. Monitoring & Logging
 - **Logging**: Structured API request/response logging
 - **Monitoring**: Prometheus + Grafana integration
 - **Metrics**: Performance and health metrics
@@ -178,7 +178,7 @@ The API includes:
 - `GET /docs` - Interactive API documentation
 - `GET /metrics` - Monitoring metrics
 
-## 📈 Model Performance
+##  Model Performance
 
 The pipeline trains and compares:
 - **Logistic Regression**: Baseline linear model
@@ -190,7 +190,7 @@ Models are evaluated using:
 - Precision, Recall, Accuracy
 - Confidence intervals
 
-## 🛠️ Development
+##  Development
 
 ### Code Quality
 - **Linting**: flake8
@@ -204,41 +204,14 @@ Models are evaluated using:
 - Docker image building
 - Artifact storage
 
-## 📝 Input Schema
 
-```json
-{
-  \"age\": 50,
-  \"sex\": 1,
-  \"chest_pain\": 2,
-  \"resting_bp\": 120,
-  \"cholesterol\": 200,
-  \"fasting_bs\": 0,
-  \"resting_ecg\": 1,
-  \"max_hr\": 150,
-  \"exercise_angina\": 0,
-  \"oldpeak\": 1.0,
-  \"st_slope\": 1
-}
-```
-
-## 📤 Output Schema
-
-```json
-{
-  \"prediction\": 0,
-  \"confidence\": 0.85,
-  \"risk_level\": \"High Confidence\"
-}
-```
-
-## 🚨 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
 1. **Models not found**: Run `python src/model_training.py` first
 2. **Port conflicts**: Change port in `src/api.py` or stop conflicting services
-3. **Docker issues**: Ensure Docker is running and has sufficient resources
+3. **Docker issues**: Ensure Docker is installed in local, running and has sufficient resources
 4. **Permission errors**: Check file permissions and user access
 
 ### Logs Location
@@ -246,7 +219,7 @@ Models are evaluated using:
 - MLflow logs: `mlruns/` directory
 - Docker logs: `docker logs heart-disease-api-container`
 
-## 📚 Dependencies
+##  Dependencies
 
 Key libraries:
 - **ML**: scikit-learn, pandas, numpy
@@ -255,18 +228,7 @@ Key libraries:
 - **Testing**: pytest, pytest-cov
 - **Visualization**: matplotlib, seaborn
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch
-3. Add tests for new features
-4. Ensure CI passes
-5. Submit pull request
-
-## 📄 License
-
+##  License
 This project is for educational purposes as part of MLOps coursework.
-
----
 
 **Note**: This is a complete MLOps implementation covering all assignment requirements with production-ready code, comprehensive testing, and full automation.
