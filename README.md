@@ -231,4 +231,3 @@ Key libraries:
 ##  License
 This project is for educational purposes as part of MLOps coursework.
 
-**Note**: This is a complete MLOps implementation covering all assignment requirements with production-ready code, comprehensive testing, and full automation.
