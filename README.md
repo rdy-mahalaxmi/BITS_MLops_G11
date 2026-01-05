@@ -17,7 +17,7 @@ A complete MLOps pipeline for heart disease prediction using machine learning, f
 └── requirements.txt      # Dependencies
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Option 1: Run Complete Pipeline
 ```bash
