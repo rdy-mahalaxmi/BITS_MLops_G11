@@ -11,6 +11,10 @@ import time
 from datetime import datetime
 from collections import defaultdict
 
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 # Import the FeatureEngineer class for pickle loading
 # Make sure the classes are available in the global namespace for pickle
 import sys
@@ -25,10 +29,6 @@ except ImportError as e:
     logger.error(f"Failed to import model classes: {e}")
     FeatureEngineer = None
     ModelTrainer = None
-
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 # Simple metrics storage
 metrics = defaultdict(int)
