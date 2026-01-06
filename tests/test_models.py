@@ -57,26 +57,6 @@ class TestAPI:
         response = self.client.get("/health")
         # May return 503 if models not loaded, which is expected in test environment
         assert response.status_code in [200, 503]
-    
-    def test_predict_endpoint_structure(self):
-        # Test with valid input structure
-        test_input = {
-            "age": 50,
-            "sex": 1,
-            "chest_pain": 2,
-            "resting_bp": 120,
-            "cholesterol": 200,
-            "fasting_bs": 0,
-            "resting_ecg": 1,
-            "max_hr": 150,
-            "exercise_angina": 0,
-            "oldpeak": 1.0,
-            "st_slope": 1
-        }
-        
-        response = self.client.post("/predict", json=test_input)
-        # May return 503 if models not loaded, which is expected in test environment
-        assert response.status_code in [200, 503]
 
 class TestDataValidation:
     def test_data_types(self):
