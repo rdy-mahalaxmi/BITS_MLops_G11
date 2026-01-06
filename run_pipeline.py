@@ -52,6 +52,7 @@ def run_data_acquisition():
     logger.info("Running data acquisition and EDA...")
     return run_command("python src/data_acquisition.py")
 
+
 def run_model_training():
     """Run model training with MLflow tracking"""
     logger.info("Running model training...")
