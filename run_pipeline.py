@@ -52,7 +52,6 @@ def run_data_acquisition():
     logger.info("Running data acquisition and EDA...")
     return run_command("python src/data_acquisition.py")
 
-
 def run_model_training():
     """Run model training with MLflow tracking"""
     logger.info("Running model training...")
@@ -309,3 +308,4 @@ def main():
 if __name__ == "__main__":
     success = main()
     sys.exit(0 if success else 1)
+    
