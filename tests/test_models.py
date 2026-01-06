@@ -68,15 +68,17 @@ class TestAPI:
         test_input = {
             "age": 50,
             "sex": 1,
-            "chest_pain": 2,
-            "resting_bp": 120,
-            "cholesterol": 200,
-            "fasting_bs": 0,
-            "resting_ecg": 1,
-            "max_hr": 150,
-            "exercise_angina": 0,
+            "chest": 2,
+            "resting_blood_pressure": 120,
+            "serum_cholestoral": 200,
+            "fasting_blood_sugar": 0,
+            "resting_electrocardiographic_results": 1,
+            "maximum_heart_rate_achieved": 150,
+            "exercise_induced_angina": 0,
             "oldpeak": 1.0,
-            "st_slope": 1,
+            "slope": 1,
+            "number_of_major_vessels": 0,
+            "thal": 3,
         }
 
         response = self.client.post("/predict", json=test_input)

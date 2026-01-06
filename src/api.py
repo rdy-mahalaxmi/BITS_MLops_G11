@@ -115,7 +115,7 @@ async def health_check():
 @app.post("/predict", response_model=PredictionOutput)
 async def predict(input_data: PredictionInput) -> PredictionOutput:
     metrics["requests"] += 1
-    start_time = time.time()
+    request_start_time = time.time()
     try:
         if model is None or feature_engineer is None:
             raise HTTPException(status_code=503, detail="Models not loaded")
@@ -156,7 +156,7 @@ async def predict(input_data: PredictionInput) -> PredictionOutput:
         )
 
         # Log response with metrics
-        processing_time = time.time() - start_time
+        processing_time = time.time() - request_start_time
         response_log = {
             "timestamp": datetime.now().isoformat(),
             "prediction": int(prediction),
@@ -169,7 +169,7 @@ async def predict(input_data: PredictionInput) -> PredictionOutput:
         return result
 
     except Exception as e:
-        processing_time = time.time() - start_time
+        processing_time = time.time() - request_start_time
         error_log = {
             "timestamp": datetime.now().isoformat(),
             "error": str(e),
