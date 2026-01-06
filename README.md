@@ -170,7 +170,7 @@ The API includes:
 - **Metrics**: Performance and health metrics
 - **Files**: `monitoring/`, `docker-compose.yml`
 
-## 🔧 API Endpoints
+##  API Endpoints
 
 - `GET /` - Root endpoint
 - `GET /health` - Health check
