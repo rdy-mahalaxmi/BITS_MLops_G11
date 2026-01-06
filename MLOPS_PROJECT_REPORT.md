@@ -1,10 +1,18 @@
 # Heart Disease Prediction MLOps Pipeline
-## Professional Project Report
+## Project Report
 
-**Author**: Mahalaxmi  
+**Authors**:
+| Student                     | Student Id     |
+|-----------------------------|----------------|
+| Mahalaxmi                   | 2024aa05508    |
+| Vankudre Pravin Subhash     | 2024aa05510    |
+| Vaishnavi Narsinh Gaikwad   | 2024aa05837    |
+| Vinay Prasad                | 2024aa05519    |
+| Sayan Manna                 | 2024ab05304    | 
+
 **Course**: MLOps  
-**Date**: January 2026  
-**Repository**: [GitHub Repository Link]
+**Date**: 06 January 2026  
+**Repository**: https://github.com/rdy-mahalaxmi/BITS_MLops_G11
 
 ---
 
@@ -155,26 +163,26 @@ Artifacts:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    MLOps Pipeline Architecture                   │
+│                    MLOps Pipeline Architecture                  │
 └─────────────────────────────────────────────────────────────────┘
 
 ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│ Data Sources │───▶│     EDA      │───▶│   Feature    │
+│ Data Sources │───▶│     EDA      │───▶│   Feature   │
 │   (UCI ML)   │    │ & Validation │    │ Engineering  │
 └──────────────┘    └──────────────┘    └──────────────┘
                                                 │
 ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│   MLflow     │◀───│    Model     │◀───│   Training   │
+│   MLflow     │◀───│    Model     │◀───│   Training  │
 │  Tracking    │    │  Selection   │    │   Pipeline   │
 └──────────────┘    └──────────────┘    └──────────────┘
                                                 │
 ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│   Testing    │───▶│   Docker     │───▶│   FastAPI    │
+│   Testing    │───▶│   Docker     │───▶│   FastAPI   │
 │  (Pytest)    │    │ Container    │    │   Service    │
 └──────────────┘    └──────────────┘    └──────────────┘
                                                 │
 ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│   GitHub     │───▶│ Kubernetes   │◀───│ Monitoring   │
+│   GitHub     │───▶│ Kubernetes   │◀───│ Monitoring  │
 │   Actions    │    │ Deployment   │    │ (Prometheus) │
 └──────────────┘    └──────────────┘    └──────────────┘
 ```
@@ -286,7 +294,7 @@ Response: {"prediction": 0, "confidence": 0.85, "risk_level": "High Confidence"}
 - **Model Training**: <2 minutes
 - **API Response Time**: <100ms average
 - **Container Startup**: <30 seconds
-- **Pipeline Execution**: <10 minutes end-to-end
+- **Pipeline Execution**: 3 minutes end-to-end
 
 ---
 
@@ -349,6 +357,6 @@ Monitoring: Prometheus, Grafana
 
 ---
 
-**Report Generated**: January 2026  
+**Report Generated**: 06 January 2026  
 **Pipeline Version**: 1.0  
 **Status**: Production Ready 
